@@ -30,6 +30,11 @@ RUN apt-get update \
     default-mysql-client \
     redis-tools \
     nginx \
+    openssl \
+    screen \
+    ifupdown \
+    ngrep \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 CMD ["man", "--version"]
