@@ -37,4 +37,5 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-CMD ["man", "--version"]
+ENTRYPOINT ["man"]
+CMD ["--version"]
