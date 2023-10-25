@@ -27,6 +27,7 @@ RUN apt-get update \
     ntp \
     cron \
     git \
+    subversion \
     default-mysql-client \
     redis-tools \
     nginx \
