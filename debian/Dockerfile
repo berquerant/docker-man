@@ -35,6 +35,7 @@ RUN apt-get update \
     screen \
     ifupdown \
     ngrep \
+    make \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
