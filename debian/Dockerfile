@@ -36,6 +36,7 @@ RUN apt-get update \
     ifupdown \
     ngrep \
     make \
+    dstat \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
