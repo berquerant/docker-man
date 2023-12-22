@@ -6,5 +6,5 @@ Docker images for running man.
 
 ```
 make debian
-docker run --rm -it docker-man:debian man man
+docker run --rm -it docker-man:debian man
 ```
