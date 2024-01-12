@@ -23,5 +23,10 @@ jobs:
         with:
           dockerfile: debian/Dockerfile
           config: .hadolint.yml
-      - name: Build debian
-        run: make debian
+      - name: Lint ubuntu
+        uses: hadolint/hadolint-action@54c9adbab1582c2ef04b2016b760714a4bfde3cf
+        with:
+          dockerfile: ubuntu/Dockerfile
+          config: .hadolint.yml
+      - name: Build
+        run: make

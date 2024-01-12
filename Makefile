@@ -1,15 +1,13 @@
-IMAGE_NAME = "docker-man"
+build: debian ubuntu
 
-build: debian
-
-DEBIAN_TAG = "debian"
-DEBIAN_IMAGE = $(IMAGE_NAME):$(DEBIAN_TAG)
-DEBIAN_DOCKERFILE = debian/Dockerfile
+IMAGE_NAME = docker-man
+DEBIAN_TAG = debian
+UBUNTU_TAG = ubuntu
 
 .PHONY: debian
 debian:
-	docker build --tag $(DEBIAN_IMAGE) -f $(DEBIAN_DOCKERFILE) .
+	./bin/build.sh $(IMAGE_NAME) $(DEBIAN_TAG)
 
-.PHONY: docker-hadolint-debian
-docker-hadolint-debian:
-	docker run --rm -i -v $(PWD)/.hadolint.yml:/.config/hadolint.yml hadolint/hadolint:v2.12.0-debian hadolint --config /.config/hadolint.yml - < $(DEBIAN_DOCKERFILE)
+.PHONY: ubuntu
+ubuntu:
+	./bin/build.sh $(IMAGE_NAME) $(UBUNTU_TAG)
