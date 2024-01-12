@@ -17,6 +17,7 @@ RUN apt-get update \
     lshw \
     systemd \
     openssh-client \
+    openssh-server \
     lsof \
     strace \
     htop \
