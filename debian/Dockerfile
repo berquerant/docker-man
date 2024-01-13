@@ -38,6 +38,7 @@ RUN apt-get update \
     ngrep \
     make \
     dstat \
+    sudo \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
