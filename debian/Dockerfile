@@ -39,6 +39,7 @@ RUN apt-get update \
     make \
     dstat \
     sudo \
+    zstd \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
