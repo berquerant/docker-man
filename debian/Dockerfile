@@ -40,6 +40,7 @@ RUN apt-get update \
     dstat \
     sudo \
     zstd \
+    fio \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
