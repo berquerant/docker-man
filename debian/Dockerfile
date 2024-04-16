@@ -43,6 +43,7 @@ RUN apt-get update \
     fio \
     logrotate \
     supervisor \
+    stress \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
