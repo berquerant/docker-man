@@ -44,6 +44,7 @@ RUN apt-get update \
     logrotate \
     supervisor \
     stress \
+    iftop \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
