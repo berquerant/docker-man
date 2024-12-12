@@ -47,6 +47,7 @@ RUN apt-get update \
     iftop \
     clamav \
     clamav-daemon \
+    mtr \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
