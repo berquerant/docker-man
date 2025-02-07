@@ -1,7 +1,7 @@
 #!/bin/bash
 
-IMAGE_NAME="$1"
-IMAGE_TAG="$2"
+readonly IMAGE_NAME="$1"
+readonly IMAGE_TAG="$2"
 
 if [ -z "$IMAGE_TAG" ] ; then
     echo "IMAGE_TAG is required" >&2
@@ -9,8 +9,8 @@ if [ -z "$IMAGE_TAG" ] ; then
     exit 1
 fi
 
-IMAGE="${IMAGE_NAME}:${IMAGE_TAG}"
-IMAGE_DOCKERFILE="${IMAGE_TAG}/Dockerfile"
+readonly IMAGE="${IMAGE_NAME}:${IMAGE_TAG}"
+readonly IMAGE_DOCKERFILE="${IMAGE_TAG}/Dockerfile"
 
 set -ex
 docker build --tag "$IMAGE" -f "$IMAGE_DOCKERFILE" .
