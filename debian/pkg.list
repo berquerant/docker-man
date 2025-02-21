@@ -42,3 +42,4 @@ telnet
 traceroute
 wget
 zstd
+cpufrequtils
