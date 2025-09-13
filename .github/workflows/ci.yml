@@ -1,7 +1,6 @@
 name: test
 
-permissions:
-  contents: read
+permissions: {}
 
 on:
   push:
@@ -14,19 +13,25 @@ on:
 jobs:
   build:
     timeout-minutes: 5
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image:
+          - "debian"
+          - "ubuntu"
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
-      - name: Lint debian
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - name: Lint
         uses: hadolint/hadolint-action@3fc49fb50d59c6ab7917a2e4195dba633e515b29
         with:
-          dockerfile: debian/Dockerfile
-          config: .hadolint.yml
-      - name: Lint ubuntu
-        uses: hadolint/hadolint-action@3fc49fb50d59c6ab7917a2e4195dba633e515b29
-        with:
-          dockerfile: ubuntu/Dockerfile
+          dockerfile: "${{ matrix.image }}/Dockerfile"
           config: .hadolint.yml
       - name: Build
-        run: make
+        env:
+          IMAGE: ${{ matrix.image }}
+        run: make "$IMAGE"
