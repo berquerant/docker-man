@@ -43,3 +43,6 @@ traceroute
 wget
 zstd
 cpufrequtils
+fdisk
+smartmontools
+mdadm
