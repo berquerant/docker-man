@@ -1,0 +1,12 @@
+# http://localhost:30180/cgi-bin/man/man2html
+services:
+  debian:
+    build:
+      dockerfile: debian/Dockerfile
+    ports:
+      - "30180:80"
+  ubuntu:
+    build:
+      dockerfile: ubuntu/Dockerfile
+    ports:
+      - "30181:80"
